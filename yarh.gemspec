@@ -3,15 +3,17 @@
 require_relative 'lib/yarh/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'yarh'
-  s.version     = Yarh::VERSION
-  s.summary     = 'Yet Another Request Handler'
-  s.description = 'Yet Another Request Handler'
-  s.authors     = ['Kirill Leonov']
-  s.email       = 'leonov7632@gmail.com'
-  s.files       = Dir.glob('lib/**/*')
-  s.homepage    = 'https://github.com/leonovk/yarh'
-  s.license     = 'MIT'
+  s.name         = 'yarh'
+  s.version      = Yarh::VERSION
+  s.summary      = 'Yet Another Request Handler'
+  s.description  = 'Yet Another Request Handler'
+  s.authors      = ['Kirill Leonov']
+  s.email        = 'leonov7632@gmail.com'
+  s.files        = Dir['exe/**/*', 'lib/**/{*,.[a-z]*}']
+  s.require_path = 'lib'
+  s.bindir       = 'exe'
+  s.homepage     = 'https://github.com/leonovk/yarh'
+  s.license      = 'MIT'
   s.required_ruby_version = '>= 3.0'
   s.metadata['homepage_uri'] = s.homepage
   s.metadata['source_code_uri'] = s.homepage
