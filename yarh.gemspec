@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.files        = Dir['exe/**/*', 'lib/**/{*,.[a-z]*}']
   s.require_path = 'lib'
   s.bindir       = 'exe'
+  s.executables = ['yarh']
   s.homepage     = 'https://github.com/leonovk/yarh'
   s.license      = 'MIT'
   s.required_ruby_version = '>= 3.0'
