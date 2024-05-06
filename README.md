@@ -1,2 +1,51 @@
 # YARH
+
+[![Build Status](https://github.com/leonovk/yarh/actions/workflows/ruby.yml/badge.svg)](https://github.com/leonovk/yarh/actions/workflows/ruby.yml) ![Gem](https://img.shields.io/gem/dt/yarh) [![Gem Version](https://badge.fury.io/rb/yarh.svg)](https://badge.fury.io/rb/yarh)
+
 ## Yet Another Request Handler
+
+The idea is to create complex chains of HTTP requests using only Yaml files and without writing a single line of code.
+
+## Installation
+
+Gem installation
+
+
+```
+gem install yarh
+```
+
+## Usage
+
+All you need is to create an XML file with the http request specification.
+
+For example:
+
+```yaml
+request:
+  url: https://example.com/api/v1/users
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    name: John Doe
+    email: john.doe@example.com
+```
+
+then run a simple command from the console:
+
+```
+yarh -r file_path
+```
+Yarh will fulfill this request himself.
+
+You can create multiple requests in one file.
+
+```yaml
+request_1:
+  url: https://example.com/api/v1/users
+  ...
+request_2:
+  url: https://example.com/api/v2/users
+  ...
+```
