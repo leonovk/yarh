@@ -1,8 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative '../lib/yarh'
+require_relative '../lib/yarh/cli'
 
-test_result = Yarh.hello
-
-puts test_result
+Yarh::CLI.start(ARGV)
