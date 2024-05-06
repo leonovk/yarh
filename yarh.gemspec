@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name         = 'yarh'
   s.version      = Yarh::VERSION
   s.summary      = 'Yet Another Request Handler'
-  s.description  = 'Yet Another Request Handler'
+  s.description  = 'Create specifications for HTTP requests without a single line of code'
   s.authors      = ['Kirill Leonov']
   s.email        = 'leonov7632@gmail.com'
   s.files        = Dir['exe/**/*', 'lib/**/{*,.[a-z]*}']
