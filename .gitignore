@@ -1,2 +1,3 @@
 .ruby-version
 test/examples/private_examples
+.byebug_history

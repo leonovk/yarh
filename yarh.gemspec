@@ -20,5 +20,6 @@ Gem::Specification.new do |s|
   s.metadata['source_code_uri'] = s.homepage
   s.metadata['documentation_uri'] = s.homepage
   s.add_dependency 'faraday', '~> 2.9'
+  s.add_dependency 'faraday-multipart', '~> 1.0', '>= 1.0.4'
   s.add_dependency 'thor', '~> 1.3'
 end

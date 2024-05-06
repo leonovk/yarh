@@ -13,7 +13,7 @@ module Yarh
 
     desc '-r PATH', 'execute requests from file'
     def run_requests(path)
-      Yarh.run_requests(path)
+      puts Yarh.run_requests(path)
     end
 
     desc 'version', 'show Yarh version'

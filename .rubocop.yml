@@ -10,3 +10,6 @@ Gemspec/RequireMFA:
 
 Gemspec/RequiredRubyVersion:
   Enabled: false
+
+Style/AndOr:
+  Enabled: false
