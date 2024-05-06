@@ -4,7 +4,7 @@
 
 ## Yet Another Request Handler
 
-The idea is to create complex chains of HTTP requests using only Yaml files and without writing a single line of code.
+The idea is to create complex chains of HTTP requests using only Yaml files and without writing a single line of code. The point is that it would be convenient to create chains of HTTP requests for local testing or any other similar purposes.
 
 ## Installation
 
@@ -17,7 +17,7 @@ gem install yarh
 
 ## Usage
 
-All you need is to create an XML file with the http request specification.
+All you need is to create an yaml file with the http request specification.
 
 For example:
 

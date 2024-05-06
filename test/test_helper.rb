@@ -7,6 +7,5 @@ require 'webmock/minitest'
 require 'json'
 require_relative '../lib/yarh'
 require_relative '../lib/yarh/version'
-require_relative '../lib/yarh/yaml_parser'
 
 Minitest::Reporters.use!

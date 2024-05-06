@@ -7,6 +7,7 @@ class YarhTest < Minitest::Test
     @path = 'test/examples/request_1.yaml'
   end
 
+  # A simple integration test for the correct stubs
   def test_with_stub_request_first
     body = {
       name: 'John Doe',

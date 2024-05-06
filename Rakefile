@@ -3,6 +3,8 @@
 require_relative 'lib/yarh/version'
 require 'rake/testtask'
 
+# run rake test MINITEST_REPORTER=HtmlReporter
+# for generate html reports
 Rake::TestTask.new(:test) do |t|
   t.libs << 'test'
   t.libs << 'lib'
@@ -17,3 +19,9 @@ task :build_and_push do
   File.delete(file_name)
   puts 'done'
 end
+
+task full_check: :test do
+  system 'rubocop'
+end
+
+task default: :full_check
