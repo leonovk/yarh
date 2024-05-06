@@ -49,3 +49,7 @@ request_2:
   url: https://example.com/api/v2/users
   ...
 ```
+
+## Contribution
+
+If you would like to contribute to the development, submit a pull request with your changes. We welcome any contributions that improve the service. You can also view the current project board here.  You can also contribute by reporting bugs or suggesting new features. Please use the GitHub issues for that.
