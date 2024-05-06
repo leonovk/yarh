@@ -10,7 +10,7 @@ module Yarh
     attr_reader :response
 
     def initialize(data)
-      @data = data.stringify_keys
+      @data = stringify_keys(data)
       @response = nil
     end
 
@@ -77,6 +77,10 @@ module Yarh
       headers.each do |header, value|
         req.headers[header] = value
       end
+    end
+
+    def stringify_keys(data)
+      data.is_a?(Hash) ? data.to_h { |k, v| [k.to_s, stringify_keys(v)] } : data
     end
   end
 end
