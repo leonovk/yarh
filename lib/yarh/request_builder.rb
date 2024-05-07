@@ -42,7 +42,7 @@ module Yarh
 
     def send_request(faraday_connection)
       faraday_connection.send(method) do |req|
-        build_headers(req, data['headers'])
+        build_headers(req)
         req.body = body if body
         req.params = params if params
         req.options.timeout timeout if timeout
@@ -64,20 +64,18 @@ module Yarh
     end
 
     def multipart?
-      return false unless data['headers']
-      return false unless data['headers']['Content-Type']
+      return false if headers.nil? or headers['Content-Type'].nil?
 
-      data['headers']['Content-Type'] == 'multipart/form-data'
+      headers['Content-Type'] == 'multipart/form-data'
     end
 
     def application_json?
-      return false unless data['headers']
-      return false unless data['headers']['Content-Type']
+      return false if headers.nil? or headers['Content-Type'].nil?
 
-      data['headers']['Content-Type'] == 'application/json'
+      headers['Content-Type'] == 'application/json'
     end
 
-    def build_headers(req, headers)
+    def build_headers(req)
       return unless headers
 
       headers.each do |header, value|
@@ -89,22 +87,24 @@ module Yarh
       data.is_a?(Hash) ? data.to_h { |k, v| [k.to_s, stringify_keys(v)] } : data
     end
 
-    def method
-      return unless data['method']
+    def headers
+      @headers ||= data['headers']
+    end
 
-      data['method'].downcase.to_sym
+    def method
+      @method ||= data['method']&.downcase&.to_sym
     end
 
     def url
-      data['url']
+      @url ||= data['url']
     end
 
     def params
-      data['params']
+      @params ||= data['params']
     end
 
     def timeout
-      data['timeout']
+      @timeout ||= data['timeout']
     end
   end
 end

@@ -16,24 +16,24 @@ module Yarh
         if value.is_a?(Hash)
           prepare_value(key, value)
         else
-          @result_body[key] = value
+          result_body[key] = value
         end
       end
 
-      @result_body
+      result_body
     end
 
     private
 
-    attr_reader :body_data
+    attr_reader :body_data, :result_body
 
     # NOTE: Currently the method is used for parsing files
     def prepare_value(key, value)
       if value['path'] and value['file_type']
         file = Faraday::UploadIO.new(value['path'], value['file_type'])
-        @result_body[key] = file
+        result_body[key] = file
       else
-        @result_body[key] = value
+        result_body[key] = value
       end
     end
   end

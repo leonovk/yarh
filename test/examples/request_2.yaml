@@ -1,0 +1,16 @@
+request_1:
+  url: https://example.com/api/v1/users
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    name: John Doe
+    email: john.doe@example.com
+request_2:
+  url: https://example.com/api/v2/users
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    name: John Doe
+    email: john.doe@example.com

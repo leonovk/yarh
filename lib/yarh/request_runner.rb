@@ -1,34 +1,21 @@
 # frozen_string_literal: true
 
-require_relative 'yaml_parser'
+require 'yaml'
 require_relative 'request_builder'
 
 module Yarh
-  # request run
+  # Main class for running queries from a file
   class RequestRunner
-    attr_accessor :path
+    attr_accessor :parsed_yaml
 
     def initialize(path)
-      @path = path
-      @responses = {}
+      @parsed_yaml = YAML.safe_load_file(path)
     end
 
     def run
-      parsed_yaml.each do |request_name, data|
-        request = RequestBuilder.new(data)
-        request.request
-        responses[request_name] = request.response
+      parsed_yaml.each_value do |data|
+        RequestBuilder.new(data).request
       end
-
-      responses
-    end
-
-    private
-
-    attr_reader :responses
-
-    def parsed_yaml
-      @parsed_yaml ||= YamlParser.parse(path)
     end
   end
 end
